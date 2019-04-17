@@ -1,8 +1,12 @@
 /******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
+Implementation :
+This program is to create a calculator to perform the arithmetic operations of addition, subtraction,
+multiplication and division, on complex numbers.
+Formula:
+𝑋 = 𝑧1 + 𝑧2 = (𝑎 + 𝑏𝑖) + (𝑐 + 𝑑𝑖) = (𝑎 + 𝑐) + (𝑏 + 𝑑)
+𝑧1 − 𝑧2 = (𝑎 + 𝑏𝑖) − (𝑐 + 𝑑𝑖) = (𝑎 − 𝑐) + (𝑏 − 𝑑)𝑖
+𝑧1 ∗ 𝑧2 = (𝑎 + 𝑏𝑖) ∗ (𝑐 + 𝑑𝑖) = (𝑎𝑐 − 𝑏𝑑) + (𝑏𝑐 + 𝑎𝑑)𝑖
+𝑧1
 
 *******************************************************************************/
 
@@ -72,6 +76,6 @@ void complex_substraction(float in1_real, float in1_imag, float in2_real, float 
 }
 void complex_division(float in1_real, float in1_imag, float in2_real, float in2_imag, float* out3_real, float* out3_imag)
 {
-    *out3_real = in1_real+in2_real;
-    *out3_imag = in1_imag+in2_imag;
+    *out3_real = (in1_real*in2_real + in1_imag*in2_imag)/((in1_imag*in1_img)+(in2_imag*in2_img));
+    *out3_imag = (in1_imag*in2_real - in1_real*in2_imag)/((in1_imag*in1_img)+(in2_imag*in2_img));
 }
